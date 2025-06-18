@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/image";
 
 export default function Testimonials() {
   const testimonials = [
@@ -17,14 +17,14 @@ export default function Testimonials() {
       image: "/placeholder.svg?height=80&width=80",
       text: "As sessões de orientação me deram ferramentas práticas para lidar com a ansiedade. Sumaia tem uma abordagem muito humana e eficaz.",
     },
-  ]
+  ];
 
   return (
     <section id="depoimentos" className="py-20 relative">
       {/* Imagem de fundo */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/fundo-depoimento.png"
+          src="/images/fundo-contato.png"
           alt="Fundo gradiente laranja verde com espirais"
           fill
           className="object-cover"
@@ -46,7 +46,9 @@ export default function Testimonials() {
               className="bg-depoimento rounded-3xl p-8 text-texto-servico shadow-xl hover-lift slide-up border-2 border-[#ffcb71]"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <p className="text-texto-servico leading-relaxed mb-8 text-lg">{testimonial.text}</p>
+              <p className="text-texto-servico leading-relaxed mb-8 text-lg">
+                {testimonial.text}
+              </p>
 
               <div className="flex items-center">
                 <Image
@@ -56,12 +58,14 @@ export default function Testimonials() {
                   height={60}
                   className="rounded-full mr-4"
                 />
-                <h4 className="font-serif font-bold text-lg text-texto-servico">{testimonial.name}</h4>
+                <h4 className="font-serif font-bold text-lg text-texto-servico">
+                  {testimonial.name}
+                </h4>
               </div>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
