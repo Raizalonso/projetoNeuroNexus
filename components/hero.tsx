@@ -1,12 +1,14 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (
-    <section id="inicio" className="min-h-screen relative pt-20">
+    <section id="inicio" className="min-h-screen relative pt-0 md:pt-0 lg:pt-0">
+      {" "}
+      {/* Padding top mínimo para a seção */}
       {/* Imagem de fundo */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -18,32 +20,42 @@ export default function Hero() {
         />
         <div className="absolute inset-0 bg-white/5"></div>
       </div>
-
-      <div className="container mx-auto px-4 py-16 relative z-10">
-        {/* Logo centralizado no topo com filtro mais escuro */}
-        <div className="flex justify-center mb-12 fade-in">
+      <div className="container mx-auto px-4 py-2 md:py-4 lg:py-6 relative z-10">
+        {" "}
+        {/* Padding top mínimo para o container */}
+        {/* Logo no topo da página (centralizado) */}
+        <div className="flex justify-center mb-2 md:mb-4 lg:mb-6 fade-in">
+          {" "}
+          {/* Margem inferior do logo reduzida */}
           <div className="logo-darkened">
-            <Image src="/images/logo.png" alt="Logo Sumaia Costa" width={120} height={120} />
+            <Image
+              src="/images/logo.png"
+              alt="Logo Sumaia Costa"
+              width={120}
+              height={120}
+              className="filter brightness-75"
+            />
           </div>
         </div>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Coluna da esquerda - Título, Texto e Botão */}
+          <div className="space-y-3 md:space-y-4 fade-in">
+            {/* Título Neuro-Nexus alinhado à esquerda e com mais destaque */}
+            <h1 className="text-7xl lg:text-9xl font-Playfair Display font-bold text-[#3e5c4e] mb-1 md:mb-2 tracking-tight leading-none neuro-nexus-shadow-right text-left">
+              Neuro-
+              <br />
+              &nbsp;Nexus {/* Espaço antes de Nexus */}
+            </h1>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Coluna da esquerda - Texto */}
-          <div className="space-y-8 fade-in">
-            <div>
-              <h1 className="text-6xl lg:text-8xl font-serif font-bold text-[#3e5c4e] mb-8 tracking-tight leading-tight neuro-nexus-shadow-right text-right">
-                Neuro-
-                <br />
-                Nexus
-              </h1>
+            {/* Parágrafo "Acolhimento psicológico..." logo abaixo do título */}
+            <p className="text-xl lg:text-2xl text-white mb-16 md:mb-20 leading-relaxed max-w-lg font-light font-sans text-left">
+              {" "}
+              {/* Aumentada a margem inferior aqui */}
+              Acolhimento psicológico para TDAH, TEA e Superdotação começa aqui.
+            </p>
 
-              <p className="text-xl lg:text-2xl text-white mb-12 leading-relaxed max-w-lg font-light font-sans">
-                Acolhimento psicológico para TDAH, TEA e Superdotação começa aqui.
-              </p>
-            </div>
-
-            {/* Botão "Saiba Mais" integrado ao conteúdo */}
-            <div className="text-right">
+            {/* Botão "Saiba Mais" alinhado à esquerda */}
+            <div className="text-left">
               <Link href="/#servicos">
                 <Button
                   size="sm"
@@ -62,7 +74,13 @@ export default function Hero() {
             <div className="bg-[#365649] p-6 rounded-3xl shadow-2xl border-2 border-[#ffcb71]">
               {/* Container do vídeo */}
               <div className="relative rounded-2xl overflow-hidden">
-                <video className="w-full h-80 lg:h-96 object-cover" autoPlay muted loop playsInline>
+                <video
+                  className="w-full h-80 lg:h-96 object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                >
                   <source
                     src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
                     type="video/mp4"
@@ -73,7 +91,11 @@ export default function Hero() {
 
               {/* Botão elegante 3D mais próximo do vídeo */}
               <div className="mt-4">
-                <Link href="/agendamento" className="block" aria-label="Agendar sessão">
+                <Link
+                  href="/agendamento"
+                  className="block"
+                  aria-label="Agendar sessão"
+                >
                   <div className="button-3d-elegant group cursor-pointer">
                     <p className="text-white font-bold font-serif whitespace-nowrap text-center leading-none">
                       SIM, QUERO AGENDAR MINHA SESSÃO.
@@ -85,7 +107,10 @@ export default function Hero() {
 
             {/* Texto abaixo da moldura com nova cor */}
             <div className="mt-4 text-center">
-              <p className="text-sm uppercase tracking-wider font-medium font-sans" style={{ color: "#f9e0a1" }}>
+              <p
+                className="text-sm uppercase tracking-wider font-medium font-sans"
+                style={{ color: "#f9e0a1" }}
+              >
                 AGENDE SEU ATENDIMENTO 100% ONLINE
               </p>
             </div>
@@ -93,5 +118,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -23,6 +23,26 @@ export default function Credentials() {
       title: "Prêmio de Pediatra do Ano",
       subtitle: "Medicina Paulista - 2023",
     },
+    {
+      icon: Medal,
+      title: "Prêmio Inspiração Médica",
+      subtitle: "Centro Médico de SP, 2024",
+    },
+    {
+      icon: Trophy,
+      title: "Condecorado como melhor médico do ano",
+      subtitle: "Hospital da Cidade, 2020",
+    },
+    {
+      icon: Award,
+      title: "Destaque em tratamento de alergias",
+      subtitle: "MedicinaMundoBR - 2015",
+    },
+    {
+      icon: Star,
+      title: "Prêmio de Pediatra do Ano",
+      subtitle: "Medicina Paulista - 2023",
+    },
   ];
 
   return (
@@ -38,14 +58,16 @@ export default function Credentials() {
         <div className="absolute inset-0 bg-white/5"></div>
       </div>
 
-      <div className="max-w-3xl mx-auto bg-[#365649] backdrop-blur-sm rounded-3xl p-8 shadow-xl slide-up border-2 border-[#ffcb71]">
-        <div className="text-center mb-16 fade-in">
-          <h2 className="text-4xl lg:text-5xl font-serif font-bold title-shadow-right mb-4">
-            FORMAÇÃO E CURSOS
-          </h2>
-        </div>
+      {/* TÍTULO FORA DO QUADRO */}
+      <div className="relative z-10 text-center mb-12">
+        <h2 className="text-4xl lg:text-5xl font-serif font-bold title-shadow-right text-[#3e5c4e]">
+          FORMAÇÃO E CURSOS
+        </h2>
+      </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* QUADRO COM OS CARDS */}
+      <div className="relative z-10 max-w-3xl mx-auto bg-[#365649] backdrop-blur-sm rounded-3xl p-8 shadow-xl slide-up border-2 border-[#ffcb71]">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {credentials.map((credential, index) => {
             const IconComponent = credential.icon;
             return (

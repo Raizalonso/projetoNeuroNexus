@@ -1,15 +1,22 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Calendar, Clock, User, Mail, Phone, MessageCircle } from "lucide-react"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
-import Image from "next/image"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Calendar,
+  Clock,
+  User,
+  Mail,
+  Phone,
+  MessageCircle,
+} from "lucide-react";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import Image from "next/image";
 
 export default function AgendamentoPage() {
   const [formData, setFormData] = useState({
@@ -20,21 +27,32 @@ export default function AgendamentoPage() {
     date: "",
     time: "",
     message: "",
-  })
+  });
 
   const services = [
     "Psicoterapia",
     "Avaliação Neuropsicológica",
     "Sessões de Orientação Individual",
     "Primeira Consulta",
-  ]
+  ];
 
-  const timeSlots = ["08:00", "09:00", "10:00", "11:00", "14:00", "15:00", "16:00", "17:00"]
+  const timeSlots = [
+    "08:00",
+    "09:00",
+    "10:00",
+    "11:00",
+    "14:00",
+    "15:00",
+    "16:00",
+    "17:00",
+  ];
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Agendamento solicitado:", formData)
-    alert("Solicitação de agendamento enviada! Entraremos em contato para confirmar.")
+    e.preventDefault();
+    console.log("Agendamento solicitado:", formData);
+    alert(
+      "Solicitação de agendamento enviada! Entraremos em contato para confirmar."
+    );
     setFormData({
       name: "",
       email: "",
@@ -43,21 +61,30 @@ export default function AgendamentoPage() {
       date: "",
       time: "",
       message: "",
-    })
-  }
+    });
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
   return (
     <div className="min-h-screen relative">
       {/* Imagem de fundo */}
       <div className="absolute inset-0 z-0">
-        <Image src="/images/fundo-atendimento.png" alt="Fundo laranja atendimento" fill className="object-cover" />
+        <Image
+          src="/images/fundo-inicio.png"
+          alt="Fundo laranja atendimento"
+          fill
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-white/20"></div>
       </div>
 
@@ -71,15 +98,20 @@ export default function AgendamentoPage() {
               <div className="text-center mb-16 fade-in">
                 <div className="mx-auto mb-6">
                   <div className="logo-darkened inline-block">
-                    <Image src="/images/logo.png" alt="Logo Sumaia Costa" width={80} height={80} />
+                    <Image
+                      src="/images/logo.png"
+                      alt="Logo Sumaia Costa"
+                      width={80}
+                      height={80}
+                    />
                   </div>
                 </div>
-                <h1 className="text-4xl lg:text-5xl font-serif font-bold title-shadow-right mb-6">
+                <h1 className="text-4xl lg:text-5xl font-serif font-bold title-shadow-right mb-6 text-[#3e5c4e]">
                   Agende sua Consulta
                 </h1>
                 <p className="text-xl text-gray-700 content-container readable-line-height font-sans">
-                  Dê o primeiro passo para seu bem-estar. Preencha o formulário abaixo e entraremos em contato para
-                  confirmar seu agendamento.
+                  Dê o primeiro passo para seu bem-estar. Preencha o formulário
+                  abaixo e entraremos em contato para confirmar seu agendamento.
                 </p>
               </div>
 
@@ -89,7 +121,10 @@ export default function AgendamentoPage() {
                   {/* Informações Pessoais */}
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="flex items-center text-white font-medium mb-3 font-sans">
+                      <label
+                        htmlFor="name"
+                        className="flex items-center text-white font-medium mb-3 font-sans"
+                      >
                         <User className="w-5 h-5 mr-2 text-white" />
                         Nome Completo *
                       </label>
@@ -106,7 +141,10 @@ export default function AgendamentoPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="flex items-center text-white font-medium mb-3 font-sans">
+                      <label
+                        htmlFor="email"
+                        className="flex items-center text-white font-medium mb-3 font-sans"
+                      >
                         <Mail className="w-5 h-5 mr-2 text-white" />
                         E-mail *
                       </label>
@@ -124,7 +162,10 @@ export default function AgendamentoPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="flex items-center text-white font-medium mb-3 font-sans">
+                    <label
+                      htmlFor="phone"
+                      className="flex items-center text-white font-medium mb-3 font-sans"
+                    >
                       <Phone className="w-5 h-5 mr-2 text-white" />
                       Telefone/WhatsApp *
                     </label>
@@ -142,7 +183,10 @@ export default function AgendamentoPage() {
 
                   {/* Serviço */}
                   <div>
-                    <label htmlFor="service" className="flex items-center text-white font-medium mb-3 font-sans">
+                    <label
+                      htmlFor="service"
+                      className="flex items-center text-white font-medium mb-3 font-sans"
+                    >
                       <MessageCircle className="w-5 h-5 mr-2 text-white" />
                       Tipo de Atendimento *
                     </label>
@@ -158,7 +202,11 @@ export default function AgendamentoPage() {
                         Selecione o tipo de atendimento
                       </option>
                       {services.map((service) => (
-                        <option key={service} value={service} className="text-gray-800">
+                        <option
+                          key={service}
+                          value={service}
+                          className="text-gray-800"
+                        >
                           {service}
                         </option>
                       ))}
@@ -168,7 +216,10 @@ export default function AgendamentoPage() {
                   {/* Data e Horário */}
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="date" className="flex items-center text-white font-medium mb-3 font-sans">
+                      <label
+                        htmlFor="date"
+                        className="flex items-center text-white font-medium mb-3 font-sans"
+                      >
                         <Calendar className="w-5 h-5 mr-2 text-white" />
                         Data Preferida *
                       </label>
@@ -185,7 +236,10 @@ export default function AgendamentoPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="time" className="flex items-center text-white font-medium mb-3 font-sans">
+                      <label
+                        htmlFor="time"
+                        className="flex items-center text-white font-medium mb-3 font-sans"
+                      >
                         <Clock className="w-5 h-5 mr-2 text-white" />
                         Horário Preferido *
                       </label>
@@ -201,7 +255,11 @@ export default function AgendamentoPage() {
                           Selecione um horário
                         </option>
                         {timeSlots.map((time) => (
-                          <option key={time} value={time} className="text-gray-800">
+                          <option
+                            key={time}
+                            value={time}
+                            className="text-gray-800"
+                          >
                             {time}
                           </option>
                         ))}
@@ -211,7 +269,10 @@ export default function AgendamentoPage() {
 
                   {/* Mensagem */}
                   <div>
-                    <label htmlFor="message" className="flex items-center text-white font-medium mb-3 font-sans">
+                    <label
+                      htmlFor="message"
+                      className="flex items-center text-white font-medium mb-3 font-sans"
+                    >
                       <MessageCircle className="w-5 h-5 mr-2 text-white" />
                       Mensagem (Opcional)
                     </label>
@@ -237,7 +298,8 @@ export default function AgendamentoPage() {
                     </Button>
 
                     <p className="text-sm text-white mt-4 font-sans">
-                      * Campos obrigatórios. Entraremos em contato em até 24 horas para confirmar seu agendamento.
+                      * Campos obrigatórios. Entraremos em contato em até 24
+                      horas para confirmar seu agendamento.
                     </p>
                   </div>
                 </form>
@@ -247,20 +309,32 @@ export default function AgendamentoPage() {
               <div className="mt-12 grid md:grid-cols-3 gap-6">
                 <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg text-center slide-up">
                   <Calendar className="w-8 h-8 text-verde-salvia mx-auto mb-4" />
-                  <h3 className="font-serif font-bold text-gray-800 mb-2">Atendimento Online</h3>
-                  <p className="text-gray-600 text-sm font-sans">Consultas 100% online via videochamada</p>
+                  <h3 className="font-serif font-bold text-gray-800 mb-2">
+                    Atendimento Online
+                  </h3>
+                  <p className="text-gray-600 text-sm font-sans">
+                    Consultas 100% online via videochamada
+                  </p>
                 </div>
 
                 <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg text-center slide-up">
                   <Clock className="w-8 h-8 text-verde-salvia mx-auto mb-4" />
-                  <h3 className="font-serif font-bold text-gray-800 mb-2">Horários Flexíveis</h3>
-                  <p className="text-gray-600 text-sm font-sans">Segunda a sexta, das 8h às 18h</p>
+                  <h3 className="font-serif font-bold text-gray-800 mb-2">
+                    Horários Flexíveis
+                  </h3>
+                  <p className="text-gray-600 text-sm font-sans">
+                    Segunda a sexta, das 8h às 18h
+                  </p>
                 </div>
 
                 <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg text-center slide-up">
                   <MessageCircle className="w-8 h-8 text-verde-salvia mx-auto mb-4" />
-                  <h3 className="font-serif font-bold text-gray-800 mb-2">Resposta Rápida</h3>
-                  <p className="text-gray-600 text-sm font-sans">Confirmação em até 24 horas</p>
+                  <h3 className="font-serif font-bold text-gray-800 mb-2">
+                    Resposta Rápida
+                  </h3>
+                  <p className="text-gray-600 text-sm font-sans">
+                    Confirmação em até 24 horas
+                  </p>
                 </div>
               </div>
             </div>
@@ -270,5 +344,5 @@ export default function AgendamentoPage() {
         <Footer />
       </div>
     </div>
-  )
+  );
 }
