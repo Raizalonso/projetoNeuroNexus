@@ -1,9 +1,11 @@
+"use client";
+
 import Image from "next/image";
 
 export default function About() {
   return (
-    <section id="sobre" className="relative py-20 min-h-screen">
-      {/* Imagem de fundo */}
+    <section id="sobre" className="relative min-h-screen overflow-hidden">
+      {/* Imagem de fundo com overlay suave */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/sobremim.jpg"
@@ -12,57 +14,89 @@ export default function About() {
           className="object-cover"
           priority
         />
+        <div className="absolute inset-0 bg-black/20 transition duration-700" />
       </div>
 
-      {/* Conteúdo sobreposto */}
-      <div className="container mx-auto px-4 relative z-10 h-full flex flex-col justify-between min-h-screen">
-        <div className="pt-16">
+      {/* Cabeçalho com nome */}
+      <div className="container mx-auto px-6 lg:px-12 relative z-10 pt-10">
+        <div className="mb-10 text-white animate-fade-in-down">
           <h2 className="text-4xl lg:text-5xl font-serif font-bold text-dourado mb-4">
             PSICÓLOGA
             <br />
-            <span className="text-6xl lg:text-7xl ">Sumaia</span>
+            <span className="text-5xl md:text-6xl lg:text-7xl text-white">
+              Sumaia
+            </span>
             <br />
-            <span className="text-6xl lg:text-7xl ">Costa</span>
+            <span className="text-5xl md:text-6xl lg:text-7xl text-white">
+              Costa
+            </span>
           </h2>
         </div>
+      </div>
 
-        <div className="pb-4">
-          <div className="relative">
-            <h3
-              className="text-2xl lg:text-3xl font-serif font-bold text-[#3e5c4e] mb-4 border-b border-white pb-2 inline-block text-[#3e5c4e]3333
-            "
-            >
-              SOBRE MIM
-            </h3>
+      {/* Bloco de texto interativo e mais transparente */}
+      <div className="absolute bottom-0 left-0 right-0 z-10 px-4 lg:px-12 pb-6">
+        <div className="bg-[#3e5c4e]/30 backdrop-blur-sm text-white rounded-t-3xl p-4 lg:p-6 shadow-md transition-transform duration-500 ease-in-out transform hover:scale-[1.02] hover:shadow-2xl animate-slide-up">
+          <h3 className="text-lg lg:text-xl font-serif font-bold border-b border-[#3e5c4e] mb-3 pb-1 inline-block">
+            SOBRE MIM
+          </h3>
 
-            {/* Container translúcido com texto expandido */}
-            <div className="bg-black/20 backdrop-blur-sm rounded-3xl p-4 lg:p-6 max-w-4xl">
-              <div className="text-white/90 leading-relaxed text-xs lg:text-sm space-y-3">
-                <p>
-                  Atendo adultos que convivem com neurodivergências, como TDAH,
-                  TEA, superdotação e ansiedade. São pessoas em busca de
-                  diagnóstico, orientação ou acompanhamento psicológico
-                  contínuo, que valorizam um espaço de escuta empática,
-                  acolhimento e comunicação clara.
-                </p>
+          <div className="space-y-4 text-sm lg:text-base leading-relaxed font-sans cursor-default">
+            <p>
+              Atendo adultos que convivem com neurodivergências, como TDAH, TEA,
+              superdotação e ansiedade. São pessoas em busca de diagnóstico,
+              orientação ou acompanhamento psicológico contínuo, que valorizam
+              um espaço de escuta empática, acolhimento e comunicação clara.
+            </p>
 
-                <p>
-                  Com cuidado centrado na singularidade de cada trajetória,
-                  ofereço um ambiente seguro e acolhedor onde cada pessoa pode
-                  se sentir compreendida e apoiada em seu processo de
-                  autoconhecimento e desenvolvimento.
-                </p>
+            <p>
+              Com cuidado centrado na singularidade de cada trajetória, ofereço
+              um ambiente seguro e acolhedor onde cada pessoa pode se sentir
+              compreendida e apoiada em seu processo de autoconhecimento e
+              desenvolvimento.
+            </p>
 
-                <p>
-                  Minha abordagem integra conhecimento científico atualizado com
-                  sensibilidade clínica, sempre respeitando o ritmo e as
-                  necessidades individuais de cada cliente.
-                </p>
-              </div>
-            </div>
+            <p>
+              Minha abordagem integra conhecimento científico atualizado com
+              sensibilidade clínica, sempre respeitando o ritmo e as
+              necessidades individuais de cada cliente.
+            </p>
           </div>
         </div>
       </div>
+
+      {/* Animações */}
+      <style jsx>{`
+        .animate-fade-in-down {
+          animation: fadeInDown 1s ease-out forwards;
+        }
+
+        .animate-slide-up {
+          animation: slideUp 1s ease-out forwards;
+        }
+
+        @keyframes fadeInDown {
+          0% {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes slideUp {
+          0% {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </section>
   );
 }

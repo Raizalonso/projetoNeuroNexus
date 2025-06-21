@@ -1,3 +1,5 @@
+"use client";
+
 import { Award, Trophy, Medal, Star } from "lucide-react";
 import Image from "next/image";
 
@@ -51,44 +53,41 @@ export default function Credentials() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/fundo-servicos.png"
-          alt="Fundo laranja formação"
+          alt="Fundo formação"
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-white/5"></div>
+        <div className="absolute inset-0 bg-white/10 backdrop-blur-sm" />
       </div>
 
-      {/* TÍTULO FORA DO QUADRO */}
+      {/* Título */}
       <div className="relative z-10 text-center mb-12">
-        <h2 className="text-4xl lg:text-5xl font-serif font-bold title-shadow-right text-[#3e5c4e]">
+        <h2 className="text-4xl lg:text-5xl font-serif font-bold text-[#3e5c4e]">
           FORMAÇÃO E CURSOS
         </h2>
       </div>
 
-      {/* QUADRO COM OS CARDS */}
-      <div className="relative z-10 max-w-3xl mx-auto bg-[#365649] backdrop-blur-sm rounded-3xl p-8 shadow-xl slide-up border-2 border-[#ffcb71]">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {credentials.map((credential, index) => {
-            const IconComponent = credential.icon;
-            return (
-              <div
-                key={index}
-                className="flex items-start slide-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="bg-[#3e5c4e] rounded-lg p-4 mr-4">
-                  <IconComponent className="w-8 h-8 text-white" />
+      {/* Cards individuais */}
+      <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+        {credentials.map((credential, index) => {
+          const IconComponent = credential.icon;
+          return (
+            <div
+              key={index}
+              className="bg-[#365649]/80 border border-[#ffcb71] rounded-2xl p-6 backdrop-blur-md shadow-xl transform transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl"
+            >
+              <div className="flex items-center gap-4 mb-3">
+                <div className="bg-[#3e5c4e] p-3 rounded-full shadow-inner">
+                  <IconComponent className="w-6 h-6 text-white" />
                 </div>
-                <div>
-                  <h3 className="text-white font-serif font-bold text-lg mb-1">
-                    {credential.title}
-                  </h3>
-                  <p className="text-white/80 text-sm">{credential.subtitle}</p>
-                </div>
+                <h3 className="text-white font-serif font-bold text-lg">
+                  {credential.title}
+                </h3>
               </div>
-            );
-          })}
-        </div>
+              <p className="text-white/80 text-sm">{credential.subtitle}</p>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
