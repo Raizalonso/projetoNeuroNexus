@@ -8,7 +8,7 @@ export default function About() {
       {/* Imagem de fundo com overlay suave */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/sobremim.jpg"
+          src="/images/fundofoto.jpeg"
           alt="Psicóloga Sumaia Costa"
           fill
           className="object-cover"

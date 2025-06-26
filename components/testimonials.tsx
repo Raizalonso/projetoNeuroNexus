@@ -27,13 +27,12 @@ export default function Testimonials() {
       {/* Imagem de fundo */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/fundo-contato.png"
-          alt="Fundo depoimentos"
+          src="/images/fundo2.png"
+          alt="Fundo formação"
           fill
-          className="object-cover"
-          priority
+          className="object-cover filter brightness-110"
         />
-        <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-white/20 backdrop-blur-sm" />
       </div>
 
       {/* Conteúdo */}

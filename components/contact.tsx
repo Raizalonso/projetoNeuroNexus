@@ -61,8 +61,7 @@ export default function Contact() {
   // Funções para redirecionar para os contatos
   const openInstagram = () => {
     window.open(
-      "https://www.instagram.com/sumaia_costa_?igsh=eXpmeDlmMzM4dXA5&utm_source=qr",
-      "_blank"
+      "https://www.instagram.com/_neuro_nexus?igsh=MTF3dTF4dmJkenQzcA==&utm_source=ig_contact_invite"
     );
   };
 
@@ -90,7 +89,7 @@ export default function Contact() {
       {/* Imagem de fundo */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/fundo-contato.png"
+          src="/images/fundo2.png"
           alt="Fundo verde oliva contato"
           fill
           className="object-cover"
@@ -113,7 +112,7 @@ export default function Contact() {
                 src="/images/logo.png"
                 alt="Logo Sumaia Costa"
                 width={60}
-                height={60}
+                height={80}
                 className="mr-4 w-12 h-12 sm:w-15 sm:h-15"
               />
               <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white">
@@ -152,11 +151,11 @@ export default function Contact() {
                 <div className="flex items-center mb-2">
                   <Clock className="w-4 h-4 sm:w-5 sm:h-5 mr-3 text-white flex-shrink-0" />
                   <span className="text-white text-sm sm:text-base">
-                    Segunda a Sexta: 08h - 18h
+                    Segunda a Sexta: 13h - 22h , Sábado: 13 - 18h.
                   </span>
                 </div>
                 <p className="text-white text-sm sm:text-base">
-                  Atendimento 100% online.
+                  Atendimento presencial e online.
                 </p>
               </div>
 

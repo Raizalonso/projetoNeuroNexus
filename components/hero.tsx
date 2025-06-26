@@ -10,8 +10,8 @@ export default function Hero() {
       {/* Fundo com imagem */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/fundo-inicio.png"
-          alt="Fundo gradiente amarelo verde com linhas topográficas"
+          src="/images/fundo5.png"
+          alt="Imagem inicial"
           fill
           className="object-cover"
           priority

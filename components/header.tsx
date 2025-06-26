@@ -14,13 +14,13 @@ export default function Header() {
       <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
           {/* LOGO + TÍTULO NEURONEXUS */}
-          <Link href="/" className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center space-x-2">
             <Image
               src="/images/logo.png"
               alt="Logo NeuroNexus"
-              width={48}
-              height={48}
-              className="h-12 w-auto"
+              width={200}
+              height={200}
+              className="h-16 w-auto"
             />
             <h1 className="text-white text-2xl sm:text-3xl font-extrabold leading-tight tracking-tight transition-transform duration-300 hover:scale-105">
               <span className="bg-gradient-to-r from-white via-terracota to-white bg-clip-text text-transparent">

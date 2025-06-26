@@ -41,7 +41,7 @@ export default function FAQ() {
       {/* Nova imagem de fundo */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/fundo-servicos.png"
+          src="/images/fundo4.png"
           alt="Fundo com linhas onduladas em tons quentes"
           fill
           className="object-cover"
