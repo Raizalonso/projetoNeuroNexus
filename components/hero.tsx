@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
@@ -22,23 +23,45 @@ export default function Hero() {
       {/* Conteúdo principal */}
       <div className="container mx-auto px-4 pt-32 pb-12 relative z-10 flex-grow">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Coluna esquerda: logo, título, texto */}
-          <div className="space-y-6 fade-in text-left">
+          {/* Coluna esquerda */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-6 text-left"
+          >
             <div className="flex items-center space-x-4">
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-Playfair Display font-bold text-[#3e5c4e] leading-none tracking-tight neuro-nexus-shadow-right">
-                Neuro
-                <br />
-                Nexus
+              <h1
+                className="text-6xl md:text-7xl lg:text-8xl font-Playfair Display font-bold text-[#3e5c4e] leading-none tracking-tight"
+                style={{
+                  textShadow: "2px 2px 4px rgba(177, 82, 64, 0.3)", // sombra elegante
+                }}
+              >
+                <span className="block">Neuro</span>
+                <span className="block pl-3">Nexus</span>
               </h1>
             </div>
 
-            <p className="text-xl lg:text-2xl text-white leading-relaxed max-w-lg font-light font-sans">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="text-xl lg:text-2xl max-w-lg font-semibold font-sans text-[#4c6b5a]"
+              style={{
+                textShadow: "1px 1px 3px rgba(60, 80, 70, 0.2)", // sombra leve no texto
+              }}
+            >
               Acolhimento psicológico para TDAH, TEA e Superdotação começa aqui.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           {/* Coluna direita: vídeo + botão agendar */}
-          <div className="relative slide-up flex flex-col items-center space-y-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            className="relative flex flex-col items-center space-y-4"
+          >
             <div className="w-full max-w-[320px] bg-[#365649] p-4 rounded-3xl shadow-2xl border-2 border-[#ffcb71]">
               <div className="relative rounded-2xl overflow-hidden">
                 <video
@@ -60,7 +83,7 @@ export default function Hero() {
                   className="block"
                   aria-label="Agendar sessão"
                 >
-                  <div className="button-3d-elegant group cursor-pointer">
+                  <div className="button-3d-elegant group cursor-pointer transition-transform transform hover:scale-105">
                     <p className="text-white font-bold font-serif whitespace-nowrap text-center leading-none">
                       SIM, QUERO AGENDAR MINHA SESSÃO.
                     </p>
@@ -75,16 +98,16 @@ export default function Hero() {
             >
               AGENDE SEU ATENDIMENTO 100% ONLINE
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
 
-      {/* Botão Saiba Mais alinhado na parte inferior esquerda da seção */}
+      {/* Botão Saiba Mais */}
       <div className="container mx-auto px-4 pb-8 relative z-10 flex justify-start">
         <Link href="/#servicos" passHref>
           <Button
             size="sm"
-            className="text-white px-6 py-3 text-sm rounded-lg hover-lift font-medium font-sans shadow-lg"
+            className="text-white px-6 py-3 text-sm rounded-lg hover:scale-105 transition-transform font-medium font-sans shadow-lg"
             style={{ backgroundColor: "#d4af37" }}
           >
             SAIBA MAIS

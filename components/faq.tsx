@@ -16,7 +16,7 @@ export default function FAQ() {
     {
       question: "Qual a duração das sessões?",
       answer:
-        "As sessões de psicoterapia têm duração de 50 minutos. Já as avaliações neuropsicológicas podem variar de 1 a 2 horas, dependendo do processo.",
+        "As sessões de psicoterapia têm duração de 50 minutos. Já as avaliações neuropsicológicas também são realizadas em sessões de aproximadamente 50 minutos, distribuídas entre 5 e 8 encontros, conforme os objetivos e a complexidade do caso.",
     },
     {
       question: "O plano de saúde cobre as sessões?",

@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   darkMode: ["class"],
@@ -66,6 +66,7 @@ const config: Config = {
         psicoterapia: "#b15240",
         avaliacao: "#365649",
         orientacao: "#bf8d0c",
+        reabilitacao: "#cb6e3f",
         "texto-servico": "#ffcb71",
         depoimento: "#566f52",
         dourado: "#a48c3e",
@@ -92,6 +93,6 @@ const config: Config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;

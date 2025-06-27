@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageCircle, Brain, Users } from "lucide-react";
+import { MessageCircle, Brain, Users, ActivitySquare } from "lucide-react";
 import Image from "next/image";
 
 export default function Services() {
@@ -17,7 +17,7 @@ export default function Services() {
       icon: Brain,
       title: "AVALIAÇÃO NEUROPSICOLÓGICA",
       description:
-        "Avaliação abrangente das funções cognitivas, com o objetivo de identificar padrões de funcionamento cerebral e contribuir para o diagnóstico e o planejamento terapêutico. Realizada em 5 a 8 sessões, conforme o objetivo da avaliação.",
+        "Investigação detalhada das funções cognitivas com foco na compreensão do funcionamento cerebral, auxiliando no diagnóstico e no direcionamento de intervenções terapêuticas personalizadas.",
       color: "bg-avaliacao",
     },
     {
@@ -27,6 +27,13 @@ export default function Services() {
         "Acolhimento e orientação específica para desenvolver estratégias de enfrentamento dos desafios cotidianos.",
       color: "bg-orientacao",
     },
+    {
+      icon: ActivitySquare,
+      title: "REABILITAÇÃO NEUROPSICOLÓGICA",
+      description:
+        "Sessões semanais com duração de uma hora, feitas a partir de planejamento individualizado, para melhorar as funções cognitivas e a qualidade de vida do paciente, visando sua autonomia.",
+      color: "bg-reabilitacao", // Bege terroso claro
+    },
   ];
 
   return (
@@ -34,10 +41,9 @@ export default function Services() {
       id="servicos"
       className="py-12 sm:py-16 lg:py-20 relative overflow-hidden"
     >
-      {/* Imagem de fundo clara com efeito visual consistente */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/fundo4.png" // ajuste aqui com sua versão clara
+          src="/images/fundo4.png"
           alt="Fundo serviços"
           fill
           className="object-cover"
@@ -52,7 +58,7 @@ export default function Services() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-10">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-10">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
